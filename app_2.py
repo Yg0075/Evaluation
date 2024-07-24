@@ -121,6 +121,7 @@ def home():
         
 @app.route('/evaluate', methods=['POST'])
 def evaluate():
+    print("Received a request!")
     if 'model_file' not in request.files or 'csv_file' not in request.files:
         return jsonify({"error": "Model file and CSV file are required."}), 400
 
@@ -162,7 +163,8 @@ def evaluate():
         "shap_summary_plot_url": f"/{shap_summary_plot_path}"
     }
 
-    return jsonify(response)
+    #return jsonify(response)
+    return jsonify({"message": "Evaluation endpoint"})
     
 @app.route('/roc_curve.png')
 def get_roc_curve():
