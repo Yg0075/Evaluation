@@ -163,8 +163,7 @@ def evaluate():
         "shap_summary_plot_url": f"/{shap_summary_plot_path}"
     }
 
-    #return jsonify(response)
-    return jsonify({"message": "Evaluation endpoint"})
+    return jsonify(response)
     
 @app.route('/roc_curve.png')
 def get_roc_curve():
