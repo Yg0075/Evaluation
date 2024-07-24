@@ -114,6 +114,11 @@ def model_interpretability(model, X, feature_names, output_path, background_data
     except Exception as e:
         print(f"Failed to generate SHAP summary plot: {e}")
         
+@app.route('/')
+def home():
+    return "API is running"
+
+        
 @app.route('/evaluate', methods=['POST'])
 def evaluate():
     if 'model_file' not in request.files or 'csv_file' not in request.files:
